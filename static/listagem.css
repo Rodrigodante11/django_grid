@@ -1,0 +1,143 @@
+/* Estilos gerais */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form select {
+  width: 150px;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+input[type="number"] {
+  width: 100px;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+select {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+button {
+  background-color: #fff;
+  color: #3f51b5;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Estilos específicos da tabela */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+a{
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+h2 {
+    color: #006699;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 36px;
+}

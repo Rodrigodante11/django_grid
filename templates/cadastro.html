@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'cadastro.css' %}">
+</head>
+<body>
+
+    <h1>Cadastro Consumidor </h1>
+
+    <form action="{% url 'view1' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <label for="nome">Nome do consumidor :</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="cpf">Documento(CPF/CNPJ):</label>
+      <input type="text" id="cpf" name="documento"  required >
+
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" onchange="cepFunction()" value="{{ dados.cep }}"/>
+
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" name="cidade" required value="{{ dados.localidade }}">
+
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" required value="{{ dados.uf  }}">
+
+        <label for="tipo">Tipo :</label>
+        <select name="tipo">
+            <option value="" selected>Selecione ...</option>
+          <option value="Residencial">Residencial</option>
+          <option value="Comercial" >Comercial</option>
+          <option value="Comercial">Comercial</option>
+        </select>
+
+      <label for="consumo">Consumo(KWh):</label>
+      <input type="text" id="consumo" name="consumo" required>
+
+      <label for="tarifa">Tarifa de distribuição:</label>
+      <input type="text" id="tarifa" name="tarifa" required>
+
+      <label for="desconto">Regra de Desconto:</label>
+      <input type="text" id="desconto" name="desconto">
+
+        <div >
+            <input type="submit" value="Enviar">
+            <a href="{% url 'view2'  %}" >Voltar</a>
+        </div>
+
+
+    </form>
+</body>
+</html>
+
+<script>
+    function cepFunction() {
+
+        var input_value = document.getElementById("cep").value;
+        window.location.href = "/consulta_cep/" + input_value;
+    }
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="{% static 'listagem.css' %}">
+</head>
+<body>
+
+    <main>
+  <h2>Lista de consumidores</h2>
+    <hr>
+    <br />
+  <form>
+      <label for="tipo-consumidor">Tipo de Consumidor:</label>
+      <select id="tipo-consumidor" name="tipo-consumidor">
+        <option value="">Todos</option>
+        <option value="residencial">Residencial</option>
+        <option value="comercial">Comercial</option>
+        <option value="industrial">Industrial</option>
+      </select>
+      <label for="intervalo-consumo">Intervalo de Consumo:</label>
+      <input type="number" id="consumo-min" name="consumo-min" placeholder="Mínimo" required>
+      <input type="number" id="consumo-max" name="consumo-max" placeholder="Máximo" required>
+      <button type="submit">Filtrar</button>
+      <a href="{% url 'view1'  %}" >Voltar</a>
+    </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Documento</th>
+        <th>CEP</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+{#        <th>Tipo de consumidor</th>#}
+        <th>Consumo</th>
+        <th>Tarifa</th>
+        <th>Desconto</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for consumer in consumers %}
+
+          <tr>
+              <td>{{consumer.name |title}}</td>
+              <td>{{consumer.document}}</td>
+              <td>{{consumer.zip_code}}</td>
+              <td>{{consumer.city}}</td>
+              <td>{{consumer.state}}</td>
+              <td>{{consumer.consumption}}</td>
+              <td>{{consumer.distributor_tax}}</td>
+              <td>25%</td>
+          </tr>
+
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+</main>
+
+</body>
+</html>
